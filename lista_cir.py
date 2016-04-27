@@ -8,9 +8,9 @@ class Lista:
     def tamanho(self):
         return len(self.lista)
 
-    def inserir(self, valor):
+    def inserir(self, valor, pos):
         valor = int(valor)
-        self.lista.append(valor)
+        self.lista.insert(valor, pos)
 
     def remover(self, valor):
         self.lista.remove(valor)
@@ -22,9 +22,9 @@ class Lista:
         return "{Lista}".format(Lista = self.lista)
 
 lista = Lista()
-lista.inserir(0)
-lista.inserir(1)
-lista.inserir(2)
+lista.inserir(0,0)
+lista.inserir(1,1)
+lista.inserir(2,2)
 
 for x in lista:
     print x

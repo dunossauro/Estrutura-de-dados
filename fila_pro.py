@@ -1,3 +1,5 @@
+import heapq
+
 class Fila:
     def __init__(self):
         self.fila = []
@@ -5,12 +7,12 @@ class Fila:
     def tamanho(self):
         return len(self.fila)
 
-    def push(self, valor):
+    def push(self, valor, prioridade):
         valor = int(valor)
-        self.fila.append(valor)
+        heapq.heappush(self.fila, (prioridade, valor))
 
     def pop(self):
-        self.fila.pop()
+        heapq.heappop(self.fila)[-1]
 
     def __iter__(self):
         return iter(self.fila)
@@ -19,13 +21,15 @@ class Fila:
         return "{fila}".format(fila = self.fila)
 
 fila = Fila()
-fila.push(0)
-fila.push(1)
-fila.push(2)
+fila.push(0,2)
+fila.push(1,1)
+fila.push(2,0)
+
+print fila
 
 fila.pop()
+print fila
 
-for x in fila:
-    print(x)
+fila.pop()
 
 print fila
