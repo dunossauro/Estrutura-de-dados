@@ -17,7 +17,8 @@ class Pilha:
 
     def __repr__(self):
         return "{pilha}".format(pilha = self.pilha)
-        
+"""
+Testes
 pilha = Pilha()
 pilha.inserir(0)
 pilha.inserir(1)
@@ -30,3 +31,4 @@ print pilha
 
 pilha.remover()
 print pilha
+"""

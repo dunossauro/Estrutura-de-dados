@@ -1,5 +1,3 @@
-from bisect import bisect_left
-
 class Lista:
     def __init__(self):
         self.lista = []
@@ -7,10 +5,9 @@ class Lista:
     def tamanho(self):
         return len(self.lista)
 
-    def inserir(self, valor):
+    def inserir(self, valor, pos):
         valor = int(valor)
-        pos = bisect_left(self.lista, valor)
-        self.lista.insert(valor, pos)
+        self.lista.insert(pos, valor)
 
     def remover(self, valor):
         self.lista.remove(valor)
@@ -20,14 +17,16 @@ class Lista:
 
     def __repr__(self):
         return "{Lista}".format(Lista = self.lista)
-
+"""
+Testes
 lista = Lista()
-lista.inserir(0)
-lista.inserir(1)
-lista.inserir(2)
+lista.inserir(0,0)
+lista.inserir(1,1)
+lista.inserir(2,2)
 
-print "Anter de inserir: {l}".format(l=lista)
+for x in lista:
+    print x
 
-lista.inserir(0)
 
-print "Depois de inserir: {l}".format(l=lista)
+print lista
+"""
